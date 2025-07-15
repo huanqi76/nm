@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Portal - EmbodiedAI Hub</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Join the collaborative ecosystem fostering knowledge sharing and peer learning among embodied AI researchers and practitioners" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fembodiedai8485back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-white/95 backdrop-blur-sm border-b border-neutral-200 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                        <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                    </svg>
+                    <span class="text-xl font-bold text-gradient-primary">EmbodiedAI Hub</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="rl_knowledge_universe.html" class="text-text-secondary hover:text-primary transition-colors">Knowledge Universe</a>
+                    <a href="getting_started.html" class="text-text-secondary hover:text-primary transition-colors">Getting Started</a>
+                    <a href="research_showcase.html" class="text-text-secondary hover:text-primary transition-colors">Research</a>
+                    <a href="community_portal.html" class="text-primary font-medium">Community</a>
+                    <a href="documentation_center.html" class="text-text-secondary hover:text-primary transition-colors">Docs</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="getting_started.html" class="btn-primary">Try Platform</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-neutral-100" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors py-2">Home</a>
+                    <a href="rl_knowledge_universe.html" class="text-text-secondary hover:text-primary transition-colors py-2">Knowledge Universe</a>
+                    <a href="getting_started.html" class="text-text-secondary hover:text-primary transition-colors py-2">Getting Started</a>
+                    <a href="research_showcase.html" class="text-text-secondary hover:text-primary transition-colors py-2">Research</a>
+                    <a href="community_portal.html" class="text-primary font-medium py-2">Community</a>
+                    <a href="documentation_center.html" class="text-text-secondary hover:text-primary transition-colors py-2">Docs</a>
+                    <a href="getting_started.html" class="btn-primary mt-4">Try Platform</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-text-primary mb-6">
+                    <span class="text-gradient-primary">Community Portal</span>
+                </h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Join thousands of researchers, students, and practitioners in the definitive collaborative ecosystem 
+                    for embodied AI knowledge sharing and peer learning.
+                </p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white rounded-lg shadow-subtle p-6 text-center border border-neutral-200">
+                    <div class="text-3xl font-bold text-primary mb-2">12,847</div>
+                    <div class="text-text-secondary">Active Members</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-subtle p-6 text-center border border-neutral-200">
+                    <div class="text-3xl font-bold text-secondary mb-2">3,429</div>
+                    <div class="text-text-secondary">Discussions</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-subtle p-6 text-center border border-neutral-200">
+                    <div class="text-3xl font-bold text-accent mb-2">847</div>
+                    <div class="text-text-secondary">Projects Shared</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-subtle p-6 text-center border border-neutral-200">
+                    <div class="text-3xl font-bold text-success mb-2">156</div>
+                    <div class="text-text-secondary">Expert Sessions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Trending Discussions -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold text-text-primary">Trending Discussions</h2>
+                            <div class="flex items-center space-x-2">
+                                <span class="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+                                <span class="text-sm text-text-secondary">Live Activity</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Discussion Item 1 -->
+                            <div class="border border-neutral-200 rounded-lg p-4 hover:bg-neutral-50 transition-colors">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Sarah Chen" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <h4 class="font-semibold text-text-primary">Dr. Sarah Chen</h4>
+                                            <span class="px-2 py-1 bg-primary-100 text-primary text-xs rounded-full">Expert</span>
+                                            <span class="text-sm text-text-secondary">2 hours ago</span>
+                                        </div>
+                                        <h3 class="text-lg font-medium text-text-primary mb-2">
+                                            Best practices for reward shaping in complex environments?
+                                        </h3>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            I'm working on a multi-agent system where traditional reward functions seem insufficient. 
+                                            Has anyone experimented with hierarchical reward structures?
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                </svg>
+                                                <span>23 replies</span>
+                                            </span>
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                                </svg>
+                                                <span>47 likes</span>
+                                            </span>
+                                            <span class="text-primary hover:text-primary-700 cursor-pointer">Join Discussion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Discussion Item 2 -->
+                            <div class="border border-neutral-200 rounded-lg p-4 hover:bg-neutral-50 transition-colors">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Prof. Michael Rodriguez" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <h4 class="font-semibold text-text-primary">Prof. Michael Rodriguez</h4>
+                                            <span class="px-2 py-1 bg-secondary-100 text-secondary text-xs rounded-full">Researcher</span>
+                                            <span class="text-sm text-text-secondary">4 hours ago</span>
+                                        </div>
+                                        <h3 class="text-lg font-medium text-text-primary mb-2">
+                                            New paper: Sim-to-Real Transfer in Robotic Manipulation
+                                        </h3>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            Just published our latest findings on bridging the simulation-reality gap. 
+                                            Would love to hear your thoughts and experiences with domain adaptation.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                </svg>
+                                                <span>15 replies</span>
+                                            </span>
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                                </svg>
+                                                <span>32 likes</span>
+                                            </span>
+                                            <span class="text-primary hover:text-primary-700 cursor-pointer">Join Discussion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Discussion Item 3 -->
+                            <div class="border border-neutral-200 rounded-lg p-4 hover:bg-neutral-50 transition-colors">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Alex Thompson" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <h4 class="font-semibold text-text-primary">Alex Thompson</h4>
+                                            <span class="px-2 py-1 bg-accent-100 text-accent text-xs rounded-full">Student</span>
+                                            <span class="text-sm text-text-secondary">6 hours ago</span>
+                                        </div>
+                                        <h3 class="text-lg font-medium text-text-primary mb-2">
+                                            Looking for collaboration on multi-agent RL project
+                                        </h3>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            PhD student seeking collaborators for a project on emergent communication in multi-agent systems. 
+                                            Experience with PyTorch and distributed training preferred.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                </svg>
+                                                <span>8 replies</span>
+                                            </span>
+                                            <span class="flex items-center space-x-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                                </svg>
+                                                <span>19 likes</span>
+                                            </span>
+                                            <span class="text-primary hover:text-primary-700 cursor-pointer">Join Discussion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-6">
+                            <button class="btn-secondary">View All Discussions</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Project Shares -->
+                    <div class="card">
+                        <h2 class="text-2xl font-bold text-text-primary mb-6">Recent Project Shares</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Project 1 -->
+                            <div class="border border-neutral-200 rounded-lg p-4 hover:shadow-card transition-all">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&auto=format&fit=crop&ixlib=rb-4.0.3" alt="David Kim" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">David Kim</h4>
+                                        <p class="text-sm text-text-secondary">1 day ago</p>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-medium text-text-primary mb-2">Quadruped Locomotion Controller</h3>
+                                <p class="text-text-secondary text-sm mb-4">
+                                    Open-source implementation of a robust quadruped locomotion controller using deep RL. 
+                                    Includes simulation environment and real robot deployment code.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                        <span class="flex items-center space-x-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                            </svg>
+                                            <span>42</span>
+                                        </span>
+                                        <span class="flex items-center space-x-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                            </svg>
+                                            <span>15</span>
+                                        </span>
+                                    </div>
+                                    <button class="text-primary hover:text-primary-700 text-sm font-medium">View Project</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 2 -->
+                            <div class="border border-neutral-200 rounded-lg p-4 hover:shadow-card transition-all">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Emma Wilson" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">Emma Wilson</h4>
+                                        <p class="text-sm text-text-secondary">2 days ago</p>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-medium text-text-primary mb-2">Vision-Language Navigation</h3>
+                                <p class="text-text-secondary text-sm mb-4">
+                                    Multi-modal RL agent that follows natural language instructions in complex indoor environments. 
+                                    Trained on photorealistic simulations.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                        <span class="flex items-center space-x-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                            </svg>
+                                            <span>38</span>
+                                        </span>
+                                        <span class="flex items-center space-x-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                            </svg>
+                                            <span>22</span>
+                                        </span>
+                                    </div>
+                                    <button class="text-primary hover:text-primary-700 text-sm font-medium">View Project</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="space-y-8">
+                    <!-- Expert Q&A Sessions -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-text-primary mb-4">Expert Q&A Sessions</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Upcoming Session -->
+                            <div class="border border-primary-200 bg-primary-50 rounded-lg p-4">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="w-2 h-2 bg-primary rounded-full"></span>
+                                    <span class="text-sm font-medium text-primary">Live in 2 hours</span>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-2">Deep RL for Robotics</h4>
+                                <p class="text-sm text-text-secondary mb-3">with Dr. Pieter Abbeel</p>
+                                <button class="w-full bg-primary text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors">
+                                    Join Session
+                                </button>
+                            </div>
+                            
+                            <!-- Past Sessions -->
+                            <div class="border border-neutral-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-text-primary mb-2">Sim-to-Real Transfer</h4>
+                                <p class="text-sm text-text-secondary mb-3">with Prof. Chelsea Finn</p>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">July 12, 2025</span>
+                                    <button class="text-primary hover:text-primary-700">Watch Recording</button>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-neutral-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-text-primary mb-2">Multi-Agent Systems</h4>
+                                <p class="text-sm text-text-secondary mb-3">with Dr. Jakob Foerster</p>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">July 8, 2025</span>
+                                    <button class="text-primary hover:text-primary-700">Watch Recording</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mentorship Matching -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-text-primary mb-4">Mentorship Program</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-r from-secondary-50 to-accent-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-text-primary mb-2">Find Your Mentor</h4>
+                                <p class="text-sm text-text-secondary mb-4">
+                                    Connect with experienced practitioners based on your interests and learning goals.
+                                </p>
+                                <button class="w-full bg-secondary text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-secondary-800 transition-colors">
+                                    Get Matched
+                                </button>
+                            </div>
+                            
+                            <div class="border border-neutral-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-text-primary mb-2">Become a Mentor</h4>
+                                <p class="text-sm text-text-secondary mb-4">
+                                    Share your expertise and help guide the next generation of AI researchers.
+                                </p>
+                                <button class="w-full border border-secondary text-secondary py-2 px-4 rounded-lg text-sm font-medium hover:bg-secondary hover:text-white transition-colors">
+                                    Apply Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Calendar -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-text-primary mb-4">Upcoming Events</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-primary-100 text-primary text-xs font-bold px-2 py-1 rounded">
+                                    JUL<br />16
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Workshop: Advanced Policy Gradients</h4>
+                                    <p class="text-sm text-text-secondary">2:00 PM - 4:00 PM EST</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-secondary-100 text-secondary text-xs font-bold px-2 py-1 rounded">
+                                    JUL<br />18
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Paper Discussion: Latest ICML Papers</h4>
+                                    <p class="text-sm text-text-secondary">6:00 PM - 7:30 PM EST</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-accent-100 text-accent text-xs font-bold px-2 py-1 rounded">
+                                    JUL<br />22
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Platform Feature Demo</h4>
+                                    <p class="text-sm text-text-secondary">1:00 PM - 2:00 PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button class="text-primary hover:text-primary-700 text-sm font-medium">View Full Calendar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discussion Forums -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-text-primary mb-4">Discussion Forums</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Organized by expertise level and topic areas with advanced moderation ensuring high-quality discourse
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Beginner Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Beginner's Corner</h3>
+                            <p class="text-sm text-text-secondary">Getting started with RL</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">1,247</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">8,432</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">2 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+                
+                <!-- Intermediate Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Advanced Techniques</h3>
+                            <p class="text-sm text-text-secondary">Deep RL & algorithms</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">892</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">3,156</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">5 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+                
+                <!-- Research Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-error-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Research Hub</h3>
+                            <p class="text-sm text-text-secondary">Cutting-edge research</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">456</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">1,289</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">12 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+                
+                <!-- Applications Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Industry Applications</h3>
+                            <p class="text-sm text-text-secondary">Real-world deployment</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">623</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">2,847</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">8 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+                
+                <!-- Tools & Platforms Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Tools & Platforms</h3>
+                            <p class="text-sm text-text-secondary">Software & frameworks</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">734</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">4,521</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">1 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+                
+                <!-- Collaboration Forum -->
+                <div class="card-interactive">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Collaboration Hub</h3>
+                            <p class="text-sm text-text-secondary">Find project partners</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Active Discussions</span>
+                            <span class="font-medium text-text-primary">289</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Members</span>
+                            <span class="font-medium text-text-primary">1,956</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Latest Activity</span>
+                            <span class="font-medium text-text-primary">15 min ago</span>
+                        </div>
+                    </div>
+                    <button class="w-full btn-secondary">Join Forum</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reputation System -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-text-primary mb-4">Community Recognition</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Our reputation system recognizes valuable contributors through peer voting and expert endorsements
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Top Contributors -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">Top Contributors</h3>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Recognized for exceptional knowledge sharing and community support
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Dr. Sarah Chen</span>
+                            <span class="text-sm font-medium text-primary">2,847 pts</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Prof. Michael Rodriguez</span>
+                            <span class="text-sm font-medium text-primary">2,156 pts</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Emma Wilson</span>
+                            <span class="text-sm font-medium text-primary">1,923 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Sharing Rewards -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">Tutorial Creators</h3>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Rewarded for creating high-quality educational content
+                    </p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">156</span> tutorials created
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">4.8/5</span> average rating
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">89%</span> completion rate
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Expert Endorsements -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">Expert Endorsed</h3>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Verified expertise through peer review and expert validation
+                    </p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">47</span> expert endorsements
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">23</span> peer reviews
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">12</span> research citations
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Impact -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-success to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">Community Impact</h3>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Measuring positive influence on community growth and learning
+                    </p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">1,247</span> questions answered
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">3,429</span> helpful votes
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <span class="font-medium text-text-primary">89</span> mentees guided
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Join Our Community?</h2>
+            <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                Connect with thousands of researchers and practitioners who are shaping the future of embodied AI
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-neutral-100 transition-colors">
+                    Create Account
+                </button>
+                <a href="getting_started.html" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition-colors">
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">EmbodiedAI Hub</span>
+                    </div>
+                    <p class="text-neutral-400">
+                        Where artificial intelligence meets physical reality. Transforming complex concepts into accessible experiences.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="getting_started.html" class="hover:text-white transition-colors">Getting Started</a></li>
+                        <li><a href="rl_knowledge_universe.html" class="hover:text-white transition-colors">Knowledge Universe</a></li>
+                        <li><a href="documentation_center.html" class="hover:text-white transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="community_portal.html" class="hover:text-white transition-colors">Forum</a></li>
+                        <li><a href="research_showcase.html" class="hover:text-white transition-colors">Research</a></li>
+                        <li><a href="community_portal.html" class="hover:text-white transition-colors">Contributors</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="documentation_center.html" class="hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="getting_started.html" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="research_showcase.html" class="hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-400">
+                <p>&copy; 2025 EmbodiedAI Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const button = event.target.closest('button');
+            
+            if (!menu.contains(event.target) && !button) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

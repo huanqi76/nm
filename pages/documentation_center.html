@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Center - EmbodiedAI Hub</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Comprehensive technical documentation for developers and researchers implementing advanced embodied AI solutions" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fembodiedai8485back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-white/95 backdrop-blur-sm border-b border-neutral-200 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                        <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                    </svg>
+                    <span class="text-xl font-bold text-gradient-primary">EmbodiedAI Hub</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="rl_knowledge_universe.html" class="text-text-secondary hover:text-primary transition-colors">Knowledge Universe</a>
+                    <a href="getting_started.html" class="text-text-secondary hover:text-primary transition-colors">Getting Started</a>
+                    <a href="research_showcase.html" class="text-text-secondary hover:text-primary transition-colors">Research</a>
+                    <a href="community_portal.html" class="text-text-secondary hover:text-primary transition-colors">Community</a>
+                    <a href="documentation_center.html" class="text-primary font-medium">Docs</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="getting_started.html" class="btn-primary">Try Platform</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-neutral-100" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors py-2">Home</a>
+                    <a href="rl_knowledge_universe.html" class="text-text-secondary hover:text-primary transition-colors py-2">Knowledge Universe</a>
+                    <a href="getting_started.html" class="text-text-secondary hover:text-primary transition-colors py-2">Getting Started</a>
+                    <a href="research_showcase.html" class="text-text-secondary hover:text-primary transition-colors py-2">Research</a>
+                    <a href="community_portal.html" class="text-text-secondary hover:text-primary transition-colors py-2">Community</a>
+                    <a href="documentation_center.html" class="text-primary font-medium py-2">Docs</a>
+                    <a href="getting_started.html" class="btn-primary mt-4">Try Platform</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-text-primary mb-6">
+                    <span class="text-gradient-primary">Documentation</span> Center
+                </h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                    Comprehensive technical resources for developers and researchers implementing advanced embodied AI solutions
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto relative">
+                    <div class="relative">
+                        <input type="text" placeholder="Search documentation, API references, guides..." class="input-field pl-12 pr-4 py-4 text-lg" id="doc-search" />
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar Navigation -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Quick Navigation -->
+                        <div class="card">
+                            <h3 class="font-semibold text-text-primary mb-4">Quick Navigation</h3>
+                            <nav class="space-y-2">
+                                <a href="#quick-start" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    Quick Start Guide
+                                </a>
+                                <a href="#api-reference" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    API Reference
+                                </a>
+                                <a href="#integration-guides" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    Integration Guides
+                                </a>
+                                <a href="#advanced-topics" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    Advanced Topics
+                                </a>
+                                <a href="#troubleshooting" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    Troubleshooting
+                                </a>
+                                <a href="#examples" class="block text-text-secondary hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-3">
+                                    Code Examples
+                                </a>
+                            </nav>
+                        </div>
+
+                        <!-- Version Info -->
+                        <div class="card">
+                            <h4 class="font-semibold text-text-primary mb-3">Current Version</h4>
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-success-100 text-success-700 text-sm font-medium rounded">v2.4.1</span>
+                                <span class="text-sm text-text-secondary">Latest</span>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-3">Released July 15, 2025</p>
+                            <a href="#changelog" class="text-primary text-sm hover:text-primary-700 transition-colors">View Changelog →</a>
+                        </div>
+
+                        <!-- Popular Guides -->
+                        <div class="card">
+                            <h4 class="font-semibold text-text-primary mb-3">Popular Guides</h4>
+                            <div class="space-y-2">
+                                <a href="#pytorch-integration" class="block text-sm text-text-secondary hover:text-primary transition-colors">
+                                    PyTorch Integration
+                                </a>
+                                <a href="#custom-environments" class="block text-sm text-text-secondary hover:text-primary transition-colors">
+                                    Custom Environments
+                                </a>
+                                <a href="#distributed-training" class="block text-sm text-text-secondary hover:text-primary transition-colors">
+                                    Distributed Training
+                                </a>
+                                <a href="#performance-optimization" class="block text-sm text-text-secondary hover:text-primary transition-colors">
+                                    Performance Optimization
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Documentation Content -->
+                <div class="lg:col-span-3 space-y-12">
+                    <!-- Quick Start Section -->
+                    <div id="quick-start" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">Quick Start Guide</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-text-primary">Installation</h3>
+                                </div>
+                                <p class="text-text-secondary mb-4">Get started with EmbodiedAI Hub in minutes with our streamlined installation process.</p>
+                                <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+                                    <code class="text-green-400 text-sm font-mono">pip install embodied-ai-hub</code>
+                                </div>
+                                <a href="#installation-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    Full Installation Guide →
+                                </a>
+                            </div>
+
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-text-primary">First Steps</h3>
+                                </div>
+                                <p class="text-text-secondary mb-4">Create your first embodied AI agent with our interactive tutorial.</p>
+                                <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+                                    <code class="text-blue-400 text-sm font-mono">from embodied_ai import Agent<br />agent = Agent.create()</code>
+                                </div>
+                                <a href="#first-agent" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    Create First Agent →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Reference Section -->
+                    <div id="api-reference" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">API Reference</h2>
+                        <div class="space-y-6">
+                            <!-- Core API -->
+                            <div class="card">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-semibold text-text-primary">Core API</h3>
+                                    <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full">v2.4.1</span>
+                                </div>
+                                <p class="text-text-secondary mb-6">Essential endpoints for agent creation, training, and environment management.</p>
+                                
+                                <!-- API Endpoint Example -->
+                                <div class="border border-neutral-200 rounded-lg overflow-hidden">
+                                    <div class="bg-neutral-50 px-4 py-3 border-b border-neutral-200">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="px-2 py-1 bg-success-100 text-success-700 text-xs font-medium rounded">POST</span>
+                                            <code class="text-sm font-mono text-text-primary">/api/v2/agents</code>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-text-secondary mb-4">Create a new embodied AI agent with specified configuration.</p>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h4 class="font-medium text-text-primary mb-2">Request Body</h4>
+                                                <div class="bg-neutral-900 rounded-lg p-4">
+                                                    <pre class="text-sm text-green-400 font-mono">{
+  "name": "navigation_agent",
+  "environment": "robotics_sim",
+  "algorithm": "ppo",
+  "config": {
+    "learning_rate": 0.0003,
+    "batch_size": 64
+  }
+}</pre>
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <button class="btn-primary text-sm">Try It Live</button>
+                                                <button class="text-primary text-sm hover:text-primary-700 transition-colors">View Full Docs</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Authentication API -->
+                            <div class="card">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-semibold text-text-primary">Authentication API</h3>
+                                    <span class="px-3 py-1 bg-warning-100 text-warning-700 text-sm font-medium rounded-full">Beta</span>
+                                </div>
+                                <p class="text-text-secondary mb-4">Secure authentication and authorization for platform access.</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="border border-neutral-200 rounded-lg p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="px-2 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded">POST</span>
+                                            <code class="text-sm font-mono">/auth/login</code>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">Authenticate user credentials</p>
+                                    </div>
+                                    <div class="border border-neutral-200 rounded-lg p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <span class="px-2 py-1 bg-accent-100 text-accent-700 text-xs font-medium rounded">GET</span>
+                                            <code class="text-sm font-mono">/auth/profile</code>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">Retrieve user profile data</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Integration Guides Section -->
+                    <div id="integration-guides" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">Integration Guides</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- PyTorch Integration -->
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=60&h=60&auto=format&fit=crop&ixlib=rb-4.0.3" alt="PyTorch" class="w-12 h-12 rounded-lg object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-text-primary">PyTorch Integration</h3>
+                                        <p class="text-sm text-text-secondary">Deep learning framework</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">Seamlessly integrate PyTorch models with embodied AI environments for advanced neural network training.</p>
+                                <div class="bg-neutral-900 rounded-lg p-3 mb-4">
+                                    <code class="text-yellow-400 text-sm font-mono">import torch<br />from embodied_ai.pytorch import TorchAgent</code>
+                                </div>
+                                <a href="#pytorch-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    View Integration Guide →
+                                </a>
+                            </div>
+
+                            <!-- TensorFlow Integration -->
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop" alt="TensorFlow" class="w-12 h-12 rounded-lg object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-text-primary">TensorFlow Integration</h3>
+                                        <p class="text-sm text-text-secondary">Machine learning platform</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">Leverage TensorFlow's ecosystem for scalable embodied AI model development and deployment.</p>
+                                <div class="bg-neutral-900 rounded-lg p-3 mb-4">
+                                    <code class="text-blue-400 text-sm font-mono">import tensorflow as tf<br />from embodied_ai.tf import TFAgent</code>
+                                </div>
+                                <a href="#tensorflow-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    View Integration Guide →
+                                </a>
+                            </div>
+
+                            <!-- Robotics Simulators -->
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <img src="https://images.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop" alt="Robotics Simulator" class="w-12 h-12 rounded-lg object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-text-primary">Robotics Simulators</h3>
+                                        <p class="text-sm text-text-secondary">Physics-based environments</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">Connect with popular robotics simulators like Gazebo, MuJoCo, and PyBullet for realistic training.</p>
+                                <div class="bg-neutral-900 rounded-lg p-3 mb-4">
+                                    <code class="text-green-400 text-sm font-mono">from embodied_ai.sim import GazeboEnv<br />env = GazeboEnv("robot_arm")</code>
+                                </div>
+                                <a href="#robotics-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    View Integration Guide →
+                                </a>
+                            </div>
+
+                            <!-- Custom Environments -->
+                            <div class="card-interactive">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-text-primary">Custom Environments</h3>
+                                        <p class="text-sm text-text-secondary">Build your own worlds</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">Create custom training environments tailored to your specific embodied AI research needs.</p>
+                                <div class="bg-neutral-900 rounded-lg p-3 mb-4">
+                                    <code class="text-purple-400 text-sm font-mono">class CustomEnv(BaseEnvironment):<br />    def step(self, action):</code>
+                                </div>
+                                <a href="#custom-env-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    View Creation Guide →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Topics Section -->
+                    <div id="advanced-topics" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">Advanced Topics</h2>
+                        <div class="space-y-6">
+                            <!-- Performance Optimization -->
+                            <div class="card">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Performance Optimization</h3>
+                                <p class="text-text-secondary mb-6">Advanced techniques for maximizing training efficiency and model performance.</p>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="border border-neutral-200 rounded-lg p-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Memory Management</h4>
+                                        <p class="text-sm text-text-secondary">Optimize memory usage for large-scale training</p>
+                                    </div>
+                                    <div class="border border-neutral-200 rounded-lg p-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Parallel Processing</h4>
+                                        <p class="text-sm text-text-secondary">Leverage multi-core and GPU acceleration</p>
+                                    </div>
+                                    <div class="border border-neutral-200 rounded-lg p-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Model Compression</h4>
+                                        <p class="text-sm text-text-secondary">Reduce model size without losing accuracy</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Distributed Training -->
+                            <div class="card">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Distributed Training</h3>
+                                <p class="text-text-secondary mb-6">Scale your embodied AI training across multiple machines and clusters.</p>
+                                <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+                                    <pre class="text-sm text-green-400 font-mono">from embodied_ai.distributed import DistributedTrainer
+
+trainer = DistributedTrainer(
+    nodes=4,
+    gpus_per_node=8,
+    strategy="data_parallel"
+)
+trainer.train(agent, environment)</pre>
+                                </div>
+                                <a href="#distributed-training-guide" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    Learn Distributed Training →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting Section -->
+                    <div id="troubleshooting" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">Troubleshooting</h2>
+                        <div class="space-y-6">
+                            <!-- Common Issues -->
+                            <div class="card">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Common Issues</h3>
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-warning-500 pl-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Training Convergence Issues</h4>
+                                        <p class="text-text-secondary mb-2">Agent fails to learn or shows unstable training curves.</p>
+                                        <div class="text-sm text-text-secondary">
+                                            <strong>Solution:</strong> Adjust learning rate, check reward function design, verify environment stability.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-error-500 pl-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Memory Overflow Errors</h4>
+                                        <p class="text-text-secondary mb-2">Out of memory errors during training or inference.</p>
+                                        <div class="text-sm text-text-secondary">
+                                            <strong>Solution:</strong> Reduce batch size, enable gradient checkpointing, use mixed precision training.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-primary-500 pl-4">
+                                        <h4 class="font-medium text-text-primary mb-2">Environment Connection Issues</h4>
+                                        <p class="text-text-secondary mb-2">Unable to connect to simulation environments.</p>
+                                        <div class="text-sm text-text-secondary">
+                                            <strong>Solution:</strong> Verify simulator installation, check network connectivity, update environment drivers.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Community Solutions -->
+                            <div class="card">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Community Solutions</h3>
+                                <p class="text-text-secondary mb-4">Solutions contributed by our expert community members.</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3 p-3 bg-neutral-50 rounded-lg">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=40&h=40&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Expert" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div class="flex-1">
+                                            <div class="flex items-center space-x-2 mb-1">
+                                                <span class="font-medium text-text-primary text-sm">Dr. Alex Chen</span>
+                                                <span class="text-xs text-text-secondary">2 hours ago</span>
+                                            </div>
+                                            <p class="text-sm text-text-secondary">Optimizing hyperparameters for robotic manipulation tasks - detailed parameter tuning guide.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start space-x-3 p-3 bg-neutral-50 rounded-lg">
+                                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Expert" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div class="flex-1">
+                                            <div class="flex items-center space-x-2 mb-1">
+                                                <span class="font-medium text-text-primary text-sm">Sarah Rodriguez</span>
+                                                <span class="text-xs text-text-secondary">1 day ago</span>
+                                            </div>
+                                            <p class="text-sm text-text-secondary">Debugging multi-agent coordination issues in complex environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="community_portal.html" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                        Browse All Solutions →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code Examples Section -->
+                    <div id="examples" class="scroll-mt-24">
+                        <h2 class="text-3xl font-bold text-text-primary mb-6">Interactive Code Examples</h2>
+                        <div class="space-y-6">
+                            <!-- Basic Agent Creation -->
+                            <div class="card">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-semibold text-text-primary">Basic Agent Creation</h3>
+                                    <button class="btn-primary text-sm">Run Example</button>
+                                </div>
+                                <p class="text-text-secondary mb-4">Create and configure a basic reinforcement learning agent.</p>
+                                <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+                                    <pre class="text-sm font-mono"><code><span class="text-blue-400">from</span> <span class="text-green-400">embodied_ai</span> <span class="text-blue-400">import</span> <span class="text-yellow-400">Agent</span>, <span class="text-yellow-400">Environment</span>
+
+<span class="text-gray-400"># Create environment</span>
+<span class="text-white">env</span> = <span class="text-yellow-400">Environment</span>(<span class="text-green-400">"navigation_2d"</span>)
+
+<span class="text-gray-400"># Initialize agent</span>
+<span class="text-white">agent</span> = <span class="text-yellow-400">Agent</span>(
+    <span class="text-white">algorithm</span>=<span class="text-green-400">"ppo"</span>,
+    <span class="text-white">observation_space</span>=<span class="text-white">env</span>.<span class="text-white">observation_space</span>,
+    <span class="text-white">action_space</span>=<span class="text-white">env</span>.<span class="text-white">action_space</span>
+)
+
+<span class="text-gray-400"># Start training</span>
+<span class="text-white">agent</span>.<span class="text-yellow-400">train</span>(<span class="text-white">env</span>, <span class="text-white">episodes</span>=<span class="text-purple-400">1000</span>)</code></pre>
+                                </div>
+                                <div class="bg-success-50 border border-success-200 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <svg class="w-5 h-5 text-success mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="font-medium text-success-700">Output</span>
+                                    </div>
+                                    <p class="text-sm text-success-700 font-mono">Agent created successfully. Training started with PPO algorithm.</p>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Multi-Agent Setup -->
+                            <div class="card">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-semibold text-text-primary">Multi-Agent Coordination</h3>
+                                    <button class="btn-secondary text-sm">Run Example</button>
+                                </div>
+                                <p class="text-text-secondary mb-4">Set up multiple agents for collaborative tasks.</p>
+                                <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+                                    <pre class="text-sm font-mono"><code><span class="text-blue-400">from</span> <span class="text-green-400">embodied_ai.multi_agent</span> <span class="text-blue-400">import</span> <span class="text-yellow-400">MultiAgentSystem</span>
+
+<span class="text-gray-400"># Create multi-agent environment</span>
+<span class="text-white">system</span> = <span class="text-yellow-400">MultiAgentSystem</span>(
+    <span class="text-white">environment</span>=<span class="text-green-400">"collaborative_navigation"</span>,
+    <span class="text-white">num_agents</span>=<span class="text-purple-400">3</span>
+)
+
+<span class="text-gray-400"># Configure agent roles</span>
+<span class="text-white">system</span>.<span class="text-yellow-400">assign_roles</span>([
+    <span class="text-green-400">"leader"</span>, <span class="text-green-400">"follower"</span>, <span class="text-green-400">"scout"</span>
+])
+
+<span class="text-gray-400"># Start coordinated training</span>
+<span class="text-white">system</span>.<span class="text-yellow-400">train_collaborative</span>(<span class="text-white">episodes</span>=<span class="text-purple-400">2000</span>)</code></pre>
+                                </div>
+                                <div class="bg-primary-50 border border-primary-200 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="font-medium text-primary-700">Live Demo Available</span>
+                                    </div>
+                                    <p class="text-sm text-primary-700">Click "Run Example" to see this code in action with real-time visualization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">EmbodiedAI Hub</span>
+                    </div>
+                    <p class="text-neutral-400">
+                        Where artificial intelligence meets physical reality. Transforming complex concepts into accessible experiences.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="getting_started.html" class="hover:text-white transition-colors">Getting Started</a></li>
+                        <li><a href="rl_knowledge_universe.html" class="hover:text-white transition-colors">Knowledge Universe</a></li>
+                        <li><a href="documentation_center.html" class="hover:text-white transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="community_portal.html" class="hover:text-white transition-colors">Forum</a></li>
+                        <li><a href="research_showcase.html" class="hover:text-white transition-colors">Research</a></li>
+                        <li><a href="community_portal.html" class="hover:text-white transition-colors">Contributors</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="documentation_center.html" class="hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="getting_started.html" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="research_showcase.html" class="hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-400">
+                <p>&copy; 2025 EmbodiedAI Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const button = event.target.closest('button');
+            
+            if (!menu.contains(event.target) && !button) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        document.getElementById('doc-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            // Implement search logic here
+            console.log('Searching for:', searchTerm);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
